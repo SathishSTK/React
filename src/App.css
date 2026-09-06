@@ -1,180 +1,122 @@
-//TASK1
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
- 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #ffffff;
-}
- 
-.page {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding-top: 65px;
-}
- 
-.intro-container {
-  width: 100%;
-  max-width: 1125px;
-  min-height: 750px;
-  text-align: center;
-  border-left: 1px solid #eeeeee;
-  border-right: 1px solid #eeeeee;
-  padding-top: 35px;
-}
- 
-.intro-container h1 {
-  font-size: 52px;
-  font-weight: 600;
-  color: #050505;
-  margin-bottom: 22px;
-}
- 
-.details {
-  color: #777777;
-  font-size: 18px;
-  line-height: 1.45;
-}
- 
-.details p {
-  margin: 3px 0;
-}
- 
-.details span {
-  font-weight: 500;
-  color: black;
-}
-  */
-  /* Main Page */
+/* Remove default browser spacing */
 
-
-//TASK2
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body */
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f4f7fb;
-  color: #222;
+  font-family: Georgia, "Times New Roman", serif;
+  background-color: #f4f6f8;
+  color: #333;
 }
 
-.app-container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 50px 20px;
+/* Main Application */
+
+.app {
+  min-height: 100vh;
+  padding: 20px 40px 40px;
 }
 
-/* Heading */
+/* Main Heading */
 
 h1 {
   text-align: center;
-  font-size: 40px;
-  color: #1e293b;
-  margin-bottom: 10px;
+
+  font-size: 36px;
+
+  color: #111;
+
+  margin-bottom: 30px;
 }
 
-.subtitle {
-  text-align: center;
-  color: #64748b;
-  font-size: 18px;
-  margin-bottom: 40px;
-}
+/* Employee Grid */
 
-/* Cards Container */
+.employee-container {
+  width: 100%;
+  max-width: 1180px;
 
-.cards-container {
+  margin: 0 auto;
+
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
+
   gap: 25px;
 }
 
-/* User Card */
+/* Employee Card */
 
-.user-card {
-  background: white;
-  border-radius: 15px;
-  padding: 25px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+.employee-card {
+  background-color: #ffffff;
+
+  min-height: 250px;
+
+  padding: 28px;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.08);
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
 
   transition: 0.3s ease;
 }
 
-.user-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+/* Hover Effect */
+
+.employee-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.14);
 }
 
-/* User Header */
+/* Employee Name */
 
-.user-header {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 25px;
+.employee-card h2 {
+  text-align: left;
+
+  color: #d72828;
+
+  font-size: 26px;
+
+  margin-bottom: 20px;
 }
 
-.avatar {
-  width: 60px;
-  height: 60px;
+/* Employee Details */
 
-  background: #2563eb;
-  color: white;
+.employee-card p {
+  font-size: 17px;
 
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 25px;
-  font-weight: bold;
-}
-
-.user-header h2 {
-  font-size: 21px;
-  margin-bottom: 5px;
-}
-
-.user-header p {
-  color: #2563eb;
-  font-size: 14px;
-}
-
-/* User Details */
-
-.user-details {
-  display: flex;
-  flex-direction: column;
-  gap: 13px;
-}
-
-.detail {
-  display: grid;
-  grid-template-columns: 100px 1fr;
-  gap: 10px;
-
-  font-size: 14px;
   line-height: 1.5;
+
+  margin-bottom: 10px;
+
+  color: #555;
 }
 
-.label {
+/* Labels */
+
+.employee-card strong {
+  color: #111;
+
   font-weight: bold;
-  color: #334155;
 }
 
 /* Tablet */
 
-@media (max-width: 900px) {
+@media (max-width: 950px) {
 
-  .cards-container {
+  .employee-container {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -184,24 +126,28 @@ h1 {
 
 @media (max-width: 600px) {
 
-  .app-container {
-    padding: 30px 15px;
+  .app {
+    padding: 20px 15px 30px;
   }
 
   h1 {
     font-size: 30px;
+
+    margin-bottom: 25px;
   }
 
-  .subtitle {
-    font-size: 15px;
-  }
-
-  .cards-container {
+  .employee-container {
     grid-template-columns: 1fr;
   }
 
-  .user-card {
-    padding: 20px;
+  .employee-card {
+    min-height: 230px;
+
+    padding: 25px;
+  }
+
+  .employee-card h2 {
+    font-size: 23px;
   }
 
 }
